@@ -5,12 +5,17 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
 // Inisialisasi Stack Navigator
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 // TODO: Buat main app 
 const App = () => ( 
     <NavigationContainer>
-        <Stack></Stack>
+        <Stack.Navigator>
+            <Stack.Screen
+                name = ""
+                
+            ></Stack.Screen>
+        </Stack.Navigator>
     </NavigationContainer>
 ); 
 
