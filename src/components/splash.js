@@ -3,9 +3,9 @@ import { StyleSheet } from 'react-native'
 
 function splash() {
   return (
-    <div>
+    <>
       
-    </div>
+    </>
   )
 }
 

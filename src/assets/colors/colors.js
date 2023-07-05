@@ -1,5 +1,5 @@
 const colors = {
-    bgdark: '', 
-    bglight: '', 
+    bgdark: '#03045E', 
+    bglight: '#023E8A', 
     
 }
