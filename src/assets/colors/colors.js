@@ -1,0 +1,5 @@
+const colors = {
+    bgdark: '', 
+    bglight: '', 
+    
+}
