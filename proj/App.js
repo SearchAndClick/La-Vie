@@ -2,11 +2,12 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import Splash from './components/Splash';
 import Signin from './components/Signin';
+import Smartqs from './components/Smartqs';
 
 export default function App() {
   return (
     <View >
-      <Signin/>
+      <Smartqs/>
     </View>
   );
 }
