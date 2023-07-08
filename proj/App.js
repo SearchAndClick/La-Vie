@@ -1,76 +1,57 @@
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import Splash from './components/Splash';
-import Signin from './components/Signin';
-import Smartqs from './components/Smartqs';
 
-export default function App() {
+import LoginScreen from './screens/LoginScreen';
+import SignupScreen from './screens/SignupScreen';
+import HomeScreen from './screens/HomeScreen';
+import { Colors } from './constants/styles';
+
+const Stack = createNativeStackNavigator();
+
+function AuthStack() {
   return (
-    <View >
-      <Smartqs/>
-    </View>
+    <Stack.Navigator
+      screenOptions={{
+        // headerStyle: { backgroundColor: Colors.primary500 },
+        headerTintColor: 'white',
+        // contentStyle: { backgroundColor: Colors.primary100 },
+      }}
+    >
+      <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="Signup" component={SignupScreen} />
+    </Stack.Navigator>
   );
 }
 
-/*
+function AuthenticatedStack() {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        // headerStyle: { backgroundColor: },
+        headerTintColor: 'white',
+        // contentStyle: { backgroundColor: },
+      }}
+    >
+      <Stack.Screen name="Welcome" component={HomeScreen} />
+    </Stack.Navigator>
+  );
+}
+
+function Navigation() {
+  return (
     <NavigationContainer>
-        <Stack.Navigator initialRouteName = "splash">
-            <Stack.Screen
-                name = "splash"
-                component = {Splash}
-                options = {{
-                    headerShown: false,
-                }} 
-            />
-            <Stack.Screen
-                name = "login"
-                component = {Login}
-                options = {{
-                    headerShown: false,
-                }} 
-            />
-            <Stack.Screen
-                name = "signin"
-                component = {Signin}
-                options = {{
-                    headerShown: false,
-                }} 
-            />
-            <Stack.Screen
-                name = "home"
-                component = {Home}
-                options = {{
-                    headerShown: false,
-                }} 
-            />
-            <Stack.Screen
-                name = "dashboard"
-                component = {Dashboard}
-                options = {{
-                    headerShown: false,
-                }} 
-            />
-            <Stack.Screen
-                name = "smartqs"
-                component = {Smartqs}
-                options = {{
-                    headerShown: false,
-                }} 
-            />
-            <Stack.Screen
-                name = "egoal"
-                component = {Egoal}
-                options = {{
-                    open: transisifade,
-                    close: transisifade,
-                    headerShown: false,
-                }} 
-            />
-        </Stack.Navigator>
-    </NavigationContainer>*/
-    
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: "03045E",
-  },
-});
+      <AuthStack />
+    </NavigationContainer>
+  );
+}
+
+export default function App() {
+  return (
+    <>
+      <StatusBar style="light" />
+
+      <Navigation />
+    </>
+  );
+}
