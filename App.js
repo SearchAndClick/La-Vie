@@ -1,6 +1,8 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
+import { useFonts } from 'expo-font';
+import AppLoading from 'expo-app-loading';
 
 import LoginScreen from './screens/LoginScreen';
 import SignupScreen from './screens/SignupScreen';
@@ -44,6 +46,22 @@ function Navigation() {
 }
 
 export default function App() {
+  let [fontsLoaded] = useFonts({
+    'montserrat-extrabold': require('./assets/fonts/Montserrat-ExtraBold.ttf'),
+    'montserrat-bold': require('./assets/fonts/Montserrat-Bold.ttf'),
+    'montserrat-regular': require('./assets/fonts/Montserrat-Regular.ttf'),
+    'montserrat-light': require('./assets/fonts/Montserrat-Light.ttf'),
+    'roboto-medium': require('./assets/fonts/Roboto-Medium.ttf'),
+    'roboto-regular': require('./assets/fonts/Roboto-Regular.ttf'),
+    'syncopate-bold': require('./assets/fonts/Syncopate-Bold.ttf'),
+    'syncopate-regular': require('./assets/fonts/Syncopate-Regular.ttf'),
+  })
+
+  if(!fontsLoaded) {
+    // menahan splash screen sebelum semua font muncul
+    return <AppLoading />
+  }
+
   return (
     <>
       <StatusBar style="light" />

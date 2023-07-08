@@ -1,7 +1,6 @@
 # La-Vie
-**By: Computer Geeks**
----
-## 50% Progress:
+**_By: Computer Geeks_**
+### 50% Progress:
 * Log In 
 * Sign Up
 * Home Page
