@@ -1,3 +1,4 @@
+// Input.js sebagai template untuk AuthForm
 import { View, Text, TextInput, StyleSheet } from 'react-native';
 
 function Input({
@@ -15,7 +16,7 @@ function Input({
       </Text>
       <TextInput
         style={[styles.input, isInvalid && styles.inputInvalid]}
-        autoCapitalize={false}
+        // autoCapitalize={false}
         // autoCapitalize="none"
         keyboardType={keyboardType}
         secureTextEntry={secure}
@@ -30,15 +31,23 @@ export default Input;
 
 const styles = StyleSheet.create({
   inputContainer: {
+    marginVertical: 8,
   },
   label: {
+    // color: 'white',
+    marginBottom: 4,
   },
   labelInvalid: {
-    // color: errorColor,
+    // color: Colors.error500,
   },
   input: {
+    paddingVertical: 8,
+    paddingHorizontal: 6,
+    // backgroundColor: Colors.primary100,
+    borderRadius: 4,
+    fontSize: 16,
   },
   inputInvalid: {
-    // backgroundColor: errorColor,
+    // backgroundColor: Colors.error100,
   },
 });

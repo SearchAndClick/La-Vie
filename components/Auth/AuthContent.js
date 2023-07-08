@@ -1,9 +1,9 @@
+// AuthContent logika dari login dan signup
 import { useState } from 'react';
 import { Alert, StyleSheet, View } from 'react-native';
 
 import FlatButton from '../ui/FlatButton';
 import AuthForm from './AuthForm';
-import { Colors } from '../../constants/styles';
 
 function AuthContent({ isLogin, onAuthenticate }) {
 
@@ -24,8 +24,9 @@ function AuthContent({ isLogin, onAuthenticate }) {
     email = email.trim();
     password = password.trim();
 
+    // rencananya emailsAreEqual mau dihapus
     const emailIsValid = email.includes('@');
-    const passwordIsValid = password.length > 6;
+    const passwordIsValid = password.length > 6; // password minimal 6 karakter
     const emailsAreEqual = email === confirmEmail;
     const passwordsAreEqual = password === confirmPassword;
 

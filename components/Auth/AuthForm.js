@@ -53,7 +53,7 @@ function AuthForm({ isLogin, onSubmit, credentialsInvalid }) {
           keyboardType="email-address"
           isInvalid={emailIsInvalid}
         />
-        {!isLogin && (
+        {!isLogin && ( // hanya muncul ketika sign up
           <Input
             label="Confirm Email Address"
             onUpdateValue={updateInputValueHandler.bind(this, 'confirmEmail')}
@@ -69,7 +69,7 @@ function AuthForm({ isLogin, onSubmit, credentialsInvalid }) {
           value={enteredPassword}
           isInvalid={passwordIsInvalid}
         />
-        {!isLogin && (
+        {!isLogin && ( // hanya muncul ketika sign up
           <Input
             label="Confirm Password"
             onUpdateValue={updateInputValueHandler.bind(

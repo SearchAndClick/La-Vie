@@ -5,7 +5,6 @@ import { StatusBar } from 'expo-status-bar';
 import LoginScreen from './screens/LoginScreen';
 import SignupScreen from './screens/SignupScreen';
 import HomeScreen from './screens/HomeScreen';
-import { Colors } from './constants/styles';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,8 +12,7 @@ function AuthStack() {
   return (
     <Stack.Navigator
       screenOptions={{
-        // headerStyle: { backgroundColor: Colors.primary500 },
-        headerTintColor: 'white',
+        headerShown: false,
         // contentStyle: { backgroundColor: Colors.primary100 },
       }}
     >
@@ -28,12 +26,11 @@ function AuthenticatedStack() {
   return (
     <Stack.Navigator
       screenOptions={{
-        // headerStyle: { backgroundColor: },
-        headerTintColor: 'white',
-        // contentStyle: { backgroundColor: },
+        headerShown: false,
+        // contentStyle: { backgroundColor: Colors.primary100 },
       }}
     >
-      <Stack.Screen name="Welcome" component={HomeScreen} />
+      <Stack.Screen name="Home" component={HomeScreen} />
     </Stack.Navigator>
   );
 }
