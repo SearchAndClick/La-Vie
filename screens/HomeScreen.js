@@ -1,13 +1,31 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import GreetingsCard from "../components/sections/GreetingsCard";
+import PriorityGoal from "../components/sections/PriorityGoal";
 
 function HomeScreen() {
   return (
-    <View>
-      <Text>Ini halaman Home!</Text>
+    <View style={styles.home}>
+      <GreetingsCard
+        greetings="Good Morning"
+        name="John Doe"
+        date="2 June 2023"
+      />
+      <PriorityGoal
+        goal="Get A on my Math examination"
+        date="24 September 2023"
+        percentage="0"
+      />
     </View>
   );
 }
 
 export default HomeScreen;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  home: {
+    flex: 1,
+    flexDirection: "column",
+    alignItems: "center",
+  },
+});

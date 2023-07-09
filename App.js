@@ -1,7 +1,8 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
-import { Text } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient'
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
 
@@ -17,6 +18,7 @@ function AuthStack() {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
+        contentStyle: {backgroundColor: 'transparent'},
         // contentStyle: { backgroundColor: Colors.primary100 },
       }}
     >
@@ -31,6 +33,7 @@ function AuthenticatedStack() {
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
+        contentStyle: {backgroundColor: 'transparent'},
         // contentStyle: { backgroundColor: Colors.primary100 },
       }}
     >
@@ -65,10 +68,16 @@ export default function App() {
   }
 
   return (
-    <>
+    <LinearGradient style={styles.background} colors={['#03045E', '#023E8A']}>
       <StatusBar style="light" />
-
+      {/* <HomeScreen /> */}
       <Navigation />
-    </>
+    </LinearGradient>
   );
 }
+
+const styles = StyleSheet.create({
+  background: {
+    flex: 1,
+  },
+})
