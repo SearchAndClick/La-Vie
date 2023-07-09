@@ -52,6 +52,7 @@ function AuthForm({ isLogin, onSubmit, credentialsInvalid }) {
           value={enteredEmail}
           keyboardType="email-address"
           isInvalid={emailIsInvalid}
+          placeholder="username@gmail.com"
         />
         {!isLogin && ( // hanya muncul ketika sign up
           <Input
@@ -60,6 +61,7 @@ function AuthForm({ isLogin, onSubmit, credentialsInvalid }) {
             value={enteredConfirmEmail}
             keyboardType="email-address"
             isInvalid={emailsDontMatch}
+            placeholder="username@gmail.com"
           />
         )}
         <Input
@@ -68,6 +70,7 @@ function AuthForm({ isLogin, onSubmit, credentialsInvalid }) {
           secure
           value={enteredPassword}
           isInvalid={passwordIsInvalid}
+          placeholder="Enter Password"
         />
         {!isLogin && ( // hanya muncul ketika sign up
           <Input
@@ -79,6 +82,7 @@ function AuthForm({ isLogin, onSubmit, credentialsInvalid }) {
             secure
             value={enteredConfirmPassword}
             isInvalid={passwordsDontMatch}
+            placeholder="Confirm Password"
           />
         )}
         <View style={styles.buttons}>
@@ -95,6 +99,6 @@ export default AuthForm;
 
 const styles = StyleSheet.create({
   buttons: {
-    marginTop: 12,
+    marginTop: 20,
   },
 });
