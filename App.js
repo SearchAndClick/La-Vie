@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text} from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient'
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
@@ -9,7 +9,6 @@ import AppLoading from 'expo-app-loading';
 import LoginScreen from './screens/LoginScreen';
 import SignupScreen from './screens/SignupScreen';
 import HomeScreen from './screens/HomeScreen';
-import Smartqs from './components/Smartqs';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +23,7 @@ function AuthStack() {
     >
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Signup" component={SignupScreen} />
+
     </Stack.Navigator>
   );
 }
@@ -69,15 +69,18 @@ export default function App() {
 
   return (
     <LinearGradient style={styles.background} colors={['#03045E', '#023E8A']}>
-      <StatusBar style="light" />
-      {/* <HomeScreen /> */}
-      <Navigation />
+        <StatusBar style="light" />
+        {/*<HomeScreen />*/} 
+        <Navigation />
+        {/*<SignupScreen/>*/}
     </LinearGradient>
   );
 }
 
 const styles = StyleSheet.create({
   background: {
-    flex: 1,
+    flex:1,
+    justifyContent: 'center',
+    alignContent: 'center',
   },
 })

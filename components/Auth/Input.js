@@ -34,21 +34,26 @@ export default Input;
 const styles = StyleSheet.create({
   inputContainer: {
     marginVertical: 15,
+    color: '#fff', 
   },
   label: {
-    // color: 'white',
     marginBottom: 4,
     fontFamily: 'montserrat-light',
+    color: '#fff', 
+    fontSize: 15,
   },
   labelInvalid: {
     color: '#F37C13',
+    fontFamily: 'montserrat-light',
   },
   input: {
     paddingVertical: 8,
     paddingHorizontal: 6,
-    borderWidth: 2,
+    borderWidth: 1,
     // backgroundColor: Colors.primary100,
-    borderRadius: 4,
+    borderRadius: 8,
+    borderColor: '#fff',
+    color: '#fff',
     fontSize: 16,
   },
   inputInvalid: {

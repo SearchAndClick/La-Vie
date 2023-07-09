@@ -1,9 +1,10 @@
 // AuthContent logika dari login dan signup
 import { useState } from 'react';
-import { Alert, StyleSheet, View } from 'react-native';
+import { Alert, StyleSheet, View, Text } from 'react-native';
 
 import FlatButton from '../ui/FlatButton';
 import AuthForm from './AuthForm';
+import { LinearGradient } from 'expo-linear-gradient';
 
 function AuthContent({ isLogin, onAuthenticate }) {
 
@@ -48,18 +49,20 @@ function AuthContent({ isLogin, onAuthenticate }) {
   }
 
   return (
-    <View style={styles.authContent}>
-      <AuthForm
-        isLogin={isLogin}
-        onSubmit={submitHandler}
-        credentialsInvalid={credentialsInvalid}
-      />
-      <View style={styles.buttons}>
-        <FlatButton onPress={switchAuthModeHandler}>
-          {isLogin ? 'Create a new user' : 'Log in instead'}
-        </FlatButton>
+    <LinearGradient style = {styles.authContent} start= {[0,0]} end= {[1,1]} colors={['#ADE8F4', '#4B87B7', '#155196','#023E8A']}>
+      <View style = {styles.container}>
+        <AuthForm
+          isLogin={isLogin}
+          onSubmit={submitHandler}
+          credentialsInvalid={credentialsInvalid}
+        />
+        <View style={styles.buttons}>
+          <FlatButton onPress={switchAuthModeHandler} text = {isLogin ? 'Belum punya akun?' : 'Sudah punya akun?'}>
+              {isLogin ? 'Daftar' : 'Masuk kembali'}
+          </FlatButton>
+        </View>
       </View>
-    </View>
+    </LinearGradient>
   );
 }
 
@@ -67,17 +70,27 @@ export default AuthContent;
 
 const styles = StyleSheet.create({
   authContent: {
-    marginTop: 90,
-    marginHorizontal: 32,
     padding: 16,
-    borderRadius: 8,
+    borderRadius: 20,
     elevation: 2,
     shadowColor: 'black',
-    shadowOffset: { width: 1, height: 1 },
+    shadowOffset: { width: 10, height: 2 },
     shadowOpacity: 0.35,
-    shadowRadius: 4,
+    shadowRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: "80%",
+    alignSelf: 'center',
+    height: "50%",
+
+  },
+  container: {
+    flex: 1,
+    alignSelf: 'center',
+    alignItems: 'center',
   },
   buttons: {
     marginTop: 8,
+    flexDirection: 'row',
   },
 });

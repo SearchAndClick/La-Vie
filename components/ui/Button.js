@@ -1,15 +1,19 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 
-function Button({ children, onPress }) {
+function Button({ children, anochildren, onPress }) {
   return (
-    <Pressable
-      style={({ pressed }) => [styles.button, pressed && styles.pressed]}
-      onPress={onPress}
-    >
-      <View>
-        <Text style={styles.buttonText}>{children}</Text>
-      </View>
-    </Pressable>
+    <View> 
+      <Text>
+
+      </Text>
+      <Pressable
+        style={({ pressed }) => [styles.button, pressed && styles.pressed]}
+        onPress={onPress}>
+        <View>
+          <Text style={styles.buttonText}>{children}</Text>
+        </View>
+      </Pressable>
+    </View>
   );
 }
 
@@ -20,20 +24,23 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     paddingVertical: 6,
     paddingHorizontal: 12,
-    // backgroundColor: Colors.primary500,
     elevation: 2,
+    backgroundColor: '#03045E',
     shadowColor: 'black',
     shadowOffset: { width: 1, height: 1 },
     shadowOpacity: 0.25,
     shadowRadius: 4,
+    width: "50%",
+    height: 35,
+    alignSelf: 'center',
   },
   pressed: {
     opacity: 0.7,
   },
   buttonText: {
     textAlign: 'center',
-    // color: 'white',
-    fontSize: 16,
-    fontWeight: 'bold'
+    color: 'white',
+    fontSize: 15,
+    fontFamily: 'montserrat-extrabold'
   },
 });

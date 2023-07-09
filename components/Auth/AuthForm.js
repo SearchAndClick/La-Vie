@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Text, Touchable, TouchableOpacity } from 'react-native';
 
 import Button from '../ui/Button';
 import Input from './Input';
@@ -18,7 +18,7 @@ function AuthForm({ isLogin, onSubmit, credentialsInvalid }) {
   } = credentialsInvalid;
 
   function updateInputValueHandler(inputType, enteredValue) {
-    switch (inputType) {
+    switch (inputTypSe) {
       case 'email':
         setEnteredEmail(enteredValue);
         break;
@@ -44,8 +44,10 @@ function AuthForm({ isLogin, onSubmit, credentialsInvalid }) {
   }
 
   return (
-    <View style={styles.form}>
-      <View>
+    <View style = {styles.form}>
+        <Text style= {styles.headertext}> 
+          {isLogin ? 'WELCOME BACK!' : 'CREATE ACCOUNT'}
+        </Text>
         <Input
           label="Email Address"
           onUpdateValue={updateInputValueHandler.bind(this, 'email')}
@@ -85,12 +87,9 @@ function AuthForm({ isLogin, onSubmit, credentialsInvalid }) {
             placeholder="Confirm Password"
           />
         )}
-        <View style={styles.buttons}>
-          <Button onPress={submitHandler}>
+        <Button onPress={submitHandler}>
             {isLogin ? 'Log In' : 'Sign Up'}
-          </Button>
-        </View>
-      </View>
+        </Button>
     </View>
   );
 }
@@ -98,7 +97,15 @@ function AuthForm({ isLogin, onSubmit, credentialsInvalid }) {
 export default AuthForm;
 
 const styles = StyleSheet.create({
-  buttons: {
-    marginTop: 20,
+  headertext: {
+    fontFamily: 'montserrat-extrabold', 
+    color: '#fff', 
+    fontSize: 24,
   },
+  buttonText: {
+    color: '#fff', 
+    fontFamily: 'montserrat-extrabold', 
+    fontSize: 13,
+    alignSelf: 'center',
+  }
 });
