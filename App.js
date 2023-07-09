@@ -2,7 +2,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient'
+import { LinearGradient } from 'expo-linear-gradient';
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
 
@@ -70,8 +70,8 @@ export default function App() {
   return (
     <LinearGradient style={styles.background} colors={['#03045E', '#023E8A']}>
       <StatusBar style="light" />
-      {/* <HomeScreen /> */}
-      <Navigation />
+      <HomeScreen />
+      {/* <Navigation /> */}
     </LinearGradient>
   );
 }

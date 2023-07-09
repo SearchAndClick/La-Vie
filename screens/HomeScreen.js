@@ -2,6 +2,7 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import GreetingsCard from "../components/sections/GreetingsCard";
 import PriorityGoal from "../components/sections/PriorityGoal";
+import OptionsCard from "../components/sections/OptionsCard";
 
 function HomeScreen() {
   return (
@@ -16,6 +17,8 @@ function HomeScreen() {
         date="24 September 2023"
         percentage="0"
       />
+
+      <OptionsCard />
     </View>
   );
 }
