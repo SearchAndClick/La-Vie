@@ -49,7 +49,7 @@ function AuthContent({ isLogin, onAuthenticate }) {
   }
 
   return (
-    <LinearGradient style = {styles.authContent} start= {[0,0]} end= {[1,1]} colors={['#ADE8F4', '#4B87B7', '#155196','#023E8A']}>
+    <LinearGradient style = {isLogin? styles.authContentLogin: styles.authContentSignin} start= {[0,0]} end= {[1,1]} colors={['#ADE8F4', '#4B87B7', '#155196','#023E8A']}>
       <View style = {styles.container}>
         <AuthForm
           isLogin={isLogin}
@@ -69,7 +69,7 @@ function AuthContent({ isLogin, onAuthenticate }) {
 export default AuthContent;
 
 const styles = StyleSheet.create({
-  authContent: {
+  authContentLogin: {
     padding: 16,
     borderRadius: 20,
     elevation: 2,
@@ -81,8 +81,21 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     width: "80%",
     alignSelf: 'center',
-    height: "50%",
-
+    height: '50%',
+  },
+  authContentSignin: {
+    padding: 16,
+    borderRadius: 20,
+    elevation: 2,
+    shadowColor: 'black',
+    shadowOffset: { width: 10, height: 2 },
+    shadowOpacity: 0.35,
+    shadowRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: "80%",
+    alignSelf: 'center',
+    height: '80%',
   },
   container: {
     flex: 1,

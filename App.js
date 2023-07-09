@@ -71,8 +71,8 @@ export default function App() {
     <LinearGradient style={styles.background} colors={['#03045E', '#023E8A']}>
         <StatusBar style="light" />
         {/*<HomeScreen />*/} 
-        <Navigation />
-        {/*<SignupScreen/>*/}
+        {/*<Navigation />*/}
+        <SignupScreen/>
     </LinearGradient>
   );
 }
