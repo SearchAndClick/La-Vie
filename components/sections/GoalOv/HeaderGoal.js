@@ -41,10 +41,8 @@ function HeaderGoal() {
 
 const styles = StyleSheet.create({
   headerContainer: {
-    flexDirection: "row",
     height: 31,
     justifyContent: "center",
-    alignItems: "center",
   },
   textStyle: {
     fontFamily: "montserrat-bold",
