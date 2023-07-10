@@ -1,12 +1,11 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text } from 'react-native';
+import React from 'react';
+import SmartContent from '../components/SmartQS/SmartContent';
 
-function SmartQuestionsScreen() {
+function SmartQuestionsScreen (){
   return (
-    <View>
-      <Text>SmartQuestionsScreen</Text>
-    </View>
+    <SmartContent/>
   )
 }
 
-export default SmartQuestionsScreen;
+export default SmartQuestionsScreen
