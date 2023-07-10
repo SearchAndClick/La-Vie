@@ -55,7 +55,6 @@ const styles = StyleSheet.create({
     flex: 1,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
-    borderWidth: 2,
     marginTop: 40,
     padding: 40,
     width: "100%",

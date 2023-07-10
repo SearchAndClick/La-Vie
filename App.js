@@ -176,8 +176,4 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignContent: "center",
   },
-  tabBarStyle: {
-    height: 80,
-    paddingBottom: 80 - 49, // Adjust paddingBottom to keep tab icons centered vertically
-  },
 });
