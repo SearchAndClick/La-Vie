@@ -11,7 +11,7 @@ import TodaysTar from "./TodaysTar";
 function ContentPage() {
   return (
     <View style={styles.container}>
-      {/* <HeaderGoal /> */}
+      <HeaderGoal />
       <GoalName />
       <ProgressBar />
       <Deadline />

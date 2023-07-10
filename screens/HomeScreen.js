@@ -1,9 +1,9 @@
 import { useLayoutEffect } from "react";
 import { StyleSheet, View } from "react-native";
 import { useNavigation } from '@react-navigation/native';
-import GreetingsCard from "../components/sections/GreetingsCard";
-import PriorityGoal from "../components/sections/PriorityGoal";
-import OptionsCard from "../components/sections/OptionsCard";
+import GreetingsCard from "../components/sections/home/GreetingsCard";
+import PriorityGoal from "../components/sections/home/PriorityGoal";
+import OptionsCard from "../components/sections/home/OptionsCard";
 
 function HomeScreen() {
   const navigation = useNavigation();

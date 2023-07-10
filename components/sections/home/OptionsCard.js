@@ -1,8 +1,7 @@
 import { StyleSheet, View, Text } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useNavigation } from "@react-navigation/native";
-import OptionTile from "../OptionTile";
-import CommunityPageScreen from "../../screens/CommunityPageScreen";
+import OptionTile from "../../OptionTile";
 
 function OptionsCard() {
   const navigation = useNavigation();

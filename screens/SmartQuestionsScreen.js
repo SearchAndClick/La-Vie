@@ -1,4 +1,4 @@
-import SmartContent from '../components/SmartQS/SmartContent';
+import SmartContent from '../components/sections/SmartQS/SmartContent';
 
 function SmartQuestionsScreen (){
   return (

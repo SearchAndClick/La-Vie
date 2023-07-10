@@ -106,7 +106,7 @@ function AuthenticatedStack() {
         component={GoalOverviewScreen}
         options={{
           headerShown: true,
-          headerStyle: {backgroundColor: 'transparent'},
+          headerStyle: { backgroundColor: "transparent" },
           headerShadowVisible: false,
         }}
       />
@@ -124,13 +124,20 @@ function AuthenticatedStack() {
         component={SettingsScreen}
         options={{
           headerShown: true,
+          headerTitleAlign: "center",
         }}
       />
       <Stack.Screen
         name="NewGoal"
         component={SmartQuestionsScreen}
         options={{
-          headerShown: false,
+          headerShown: true,
+          headerTitleAlign: "center",
+          headerTitle: "Smart Questions",
+          headerStyle: { backgroundColor: "transparent" },
+          headerShadowVisible: false,
+          headerTintColor: "white",
+          headerTitleStyle: { fontFamily: "montserrat-bold", fontSize: 25 },
         }}
       />
       <Stack.Screen

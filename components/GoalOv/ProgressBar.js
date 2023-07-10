@@ -14,6 +14,8 @@ const ProgressBar = () => {
             <View style = {styles.progressLength}>
             </View>
         </View>
+        <Text style={styles.progressText}>63%</Text>
+            <View style={styles.progressBar}></View>
     </View>
   )
 }
@@ -51,7 +53,15 @@ const styles = StyleSheet.create({
         margin:3,
         height: "90%",
         borderRadius: 30,
-    }
+    },
+    progressBar: {
+      borderWidth: 2,
+      width: 280,
+      height: 16,
+      borderColor: "#023E8A",
+      borderRadius: 30,
+      marginBottom: 2,
+    },
 })
 
 export default ProgressBar

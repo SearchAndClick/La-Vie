@@ -11,7 +11,7 @@ const GoalName = () => {
         <Text style={styles.textStyle}>GoalName</Text>
       </View>
       <TouchableOpacity style={styles.icon} onPress={settingNamaGoal}>
-        <Ionicons name="pencil-outline" color={"black"} size={45} />
+        <Ionicons name="pencil-outline" color={"black"} size={25} />
       </TouchableOpacity>
     </View>
   );

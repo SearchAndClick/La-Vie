@@ -37,7 +37,6 @@ function SmartContent(saveData){
 
   return (
     <View>
-      <Text style = {styles.title} >SMART Questions</Text>
       <SmartForm/>
       <Steps/>
       <ChooseDate/>
