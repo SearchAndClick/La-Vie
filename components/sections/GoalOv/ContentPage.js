@@ -18,9 +18,6 @@ function ContentPage() {
         <ProgressBar percentage="60" justify="flex-end" color="#023E8A"/>
       </View>
       <Deadline />
-      <TodaysTar />
-      <GoalSteps />
-      <Notes />
     </View>
   );
 }
@@ -29,13 +26,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   progressContainer: {
-    borderWidth: 2,
     width: '90%',
+    marginTop: 10,
   },
   progressText: {
     position: "absolute",
     fontFamily: 'montserrat-bold',
-    fontSize: 17,
+    fontSize: 16,
     color: 'white',
   },
 });
