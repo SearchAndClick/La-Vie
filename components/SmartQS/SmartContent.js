@@ -1,5 +1,5 @@
-import { View, Text } from 'react-native';
-import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
+import { useState } from 'react';
 import ButtonBackSave from './ButtonBackSave';
 import ButtonYesNo from './ButtonYesNo';
 import ChooseDate from './ChooseDate';

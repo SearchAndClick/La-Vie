@@ -1,5 +1,5 @@
-import { View, Text, Switch } from 'react-native'
-import React from 'react'
+import { View, Text, Switch, StyleSheet } from 'react-native'
+import React, { useState } from 'react'
 
 const ButtonYesNo = (onPress) => {
   const [isEnabled, setIsEnabled] = useState(false);
@@ -19,3 +19,8 @@ const ButtonYesNo = (onPress) => {
 }
 
 export default ButtonYesNo
+
+const styles = StyleSheet.create({
+  smartContainer: {},
+
+})

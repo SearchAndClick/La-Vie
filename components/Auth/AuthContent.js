@@ -1,6 +1,6 @@
 // AuthContent logika dari login dan signup
-import { useState } from 'react';
 import { Alert, StyleSheet, View, Text } from 'react-native';
+import { useState } from 'react';
 
 import FlatButton from '../ui/FlatButton';
 import AuthForm from './AuthForm';
