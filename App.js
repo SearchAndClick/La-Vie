@@ -94,10 +94,22 @@ function AuthStack() {
 
 function AuthenticatedStack() {
   return (
-    <Stack.Navigator screenOptions={{
-      contentStyle: { backgroundColor: "transparent" },
-      headerShown: false,}} initialScreen="Sementara">
-      <Stack.Screen name="Sementara" component={GoalOverviewScreen} />
+    <Stack.Navigator
+      screenOptions={{
+        contentStyle: { backgroundColor: "transparent" },
+        headerShown: false,
+      }}
+      initialRouteName="Sementara"
+    >
+      <Stack.Screen
+        name="Sementara"
+        component={GoalOverviewScreen}
+        options={{
+          headerShown: true,
+          headerStyle: {backgroundColor: 'transparent'},
+          headerShadowVisible: false,
+        }}
+      />
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen
         name="GoalPlanner"
@@ -121,10 +133,13 @@ function AuthenticatedStack() {
           headerShown: false,
         }}
       />
-      <Stack.Screen name="UserProfile" component={UserProfileScreen}
+      <Stack.Screen
+        name="UserProfile"
+        component={UserProfileScreen}
         options={{
           headerShown: false,
-        }} />
+        }}
+      />
     </Stack.Navigator>
   );
 }
@@ -158,7 +173,7 @@ export default function App() {
     <NavigationContainer>
       <StatusBar style="light" />
       <LinearGradient style={styles.background} colors={["#03045E", "#023E8A"]}>
-        <AuthenticatedStack/>
+        <AuthenticatedStack />
       </LinearGradient>
     </NavigationContainer>
   );

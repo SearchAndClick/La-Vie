@@ -2,7 +2,7 @@
 import { Alert, StyleSheet, View, Text } from 'react-native';
 import { useState } from 'react';
 
-import FlatButton from '../UI/FlatButton';
+import FlatButton from '../ui/FlatButton';
 import AuthForm from './AuthForm';
 import { LinearGradient } from 'expo-linear-gradient';
 
