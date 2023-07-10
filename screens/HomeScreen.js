@@ -1,10 +1,20 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
-import { NavigationContainer } from "@react-navigation/native";
+import { useLayoutEffect } from "react";
+import { StyleSheet, View } from "react-native";
+import { useNavigation } from '@react-navigation/native';
 import GreetingsCard from "../components/sections/GreetingsCard";
 import PriorityGoal from "../components/sections/PriorityGoal";
 import OptionsCard from "../components/sections/OptionsCard";
 
 function HomeScreen() {
+  const navigation = useNavigation();
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      tabBarVisible: false,
+      headerBackVisible: false, // ini dia
+    });
+  }, [navigation]);
+
   return (
     <View style={styles.home}>
       <GreetingsCard

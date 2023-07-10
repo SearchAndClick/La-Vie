@@ -2,10 +2,10 @@ import { View, Text, StyleSheet, Pressable } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { Ionicons } from "@expo/vector-icons";
 
-function OptionTile({ option, logo }) {
+function OptionTile({ option, logo, onPress, screen }) {
   return (
     <LinearGradient style={styles.optionTile} colors={["#0077B6", "#00B4D8"]}>
-      <Pressable style={styles.press} android_ripple={{ color: '#ccc'}}>
+      <Pressable onPress={() => onPress(screen)} style={styles.press} android_ripple={{ color: "#ccc" }}>
         <View>
           <Ionicons style={styles.icon} name={logo} size={45} color="white" />
           <Text style={styles.optionText}>{option}</Text>
@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
     height: 150,
     borderRadius: 20,
     margin: 5,
-    overflow: 'hidden',
+    overflow: "hidden",
   },
   icon: {
     marginHorizontal: 50,
@@ -40,10 +40,10 @@ const styles = StyleSheet.create({
   press: {
     alignItems: "center",
     justifyContent: "center",
-    overflow: 'hidden',
+    overflow: "hidden",
     borderRadius: 20,
     flex: 1,
-    width: '100%',
-    height: '100%',
-  }
+    width: "100%",
+    height: "100%",
+  },
 });

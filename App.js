@@ -1,4 +1,4 @@
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, useNavigation } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { StatusBar } from "expo-status-bar";
@@ -6,6 +6,7 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useFonts } from "expo-font";
+import { Ionicons } from "@expo/vector-icons";
 import AppLoading from "expo-app-loading";
 
 import LoginScreen from "./screens/LoginScreen";
@@ -14,17 +15,63 @@ import HomeScreen from "./screens/HomeScreen";
 import SettingsScreen from "./screens/SettingsScreen";
 import CommunityPageScreen from "./screens/CommunityPageScreen";
 import GoalPlannerScreen from "./screens/GoalPlannerScreen";
+import SmartQuestionsScreen from "./screens/SmartQuestionsScreen";
+import UserProfileScreen from "./screens/UserProfileScreen";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-function TabNavigator() {
+function TabNavigator(initialScreen) {
+  const navigation = useNavigation();
+
   return (
-    <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Dashboard" component={GoalPlannerScreen} />
-      <Tab.Screen name="CommunityPage" component={CommunityPageScreen} />
-      <Tab.Screen name="Setting" component={SettingsScreen} />
+    <Tab.Navigator
+      initialRouteName={initialScreen}
+      screenOptions={{
+        contentStyle: { backgroundColor: "transparent" },
+        headerShown: false,
+      }}
+      tabBarOptions={{
+        style: styles.tabBarStyle, // Apply the custom style here
+      }}
+    >
+      <Tab.Screen
+        name="Home"
+        component={() => navigation.goBack()}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="home-outline" color={color} size={size} />
+          ),
+          tabBarVisible: false,
+        }}
+      />
+      <Tab.Screen
+        name="GoalPlanner"
+        component={GoalPlannerScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="flag-outline" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="CommunityPage"
+        component={CommunityPageScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="people-outline" color={color} size={size} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="UserProfile"
+        component={UserProfileScreen}
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="person" color={color} size={size} />
+          ),
+        }}
+      />
     </Tab.Navigator>
   );
 }
@@ -87,14 +134,36 @@ export default function App() {
     <NavigationContainer>
       <StatusBar style="light" />
       <LinearGradient style={styles.background} colors={["#03045E", "#023E8A"]}>
-        <Stack.Navigator initialRouteName="Home" screenOptions={{
-          headerShown: false,
-          contentStyle: {backgroundColor: 'transparent'},
-        }}>
+        <Stack.Navigator
+          screenOptions={{
+            contentStyle: { backgroundColor: "transparent" },
+            headerShown: false,
+          }}
+        >
           <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="Dashboard" component={GoalPlannerScreen} />
-          <Stack.Screen name="CommunityPage" component={CommunityPageScreen} />
-          <Stack.Screen name="Setting" component={SettingsScreen} />
+          <Stack.Screen
+            name="GoalPlanner"
+            component={() => TabNavigator("GoalPlanner")}
+          />
+          <Stack.Screen
+            name="CommunityPage"
+            component={() => TabNavigator("CommunityPage")}
+          />
+          <Stack.Screen
+            name="Settings"
+            component={SettingsScreen}
+            options={{
+              headerShown: true,
+            }}
+          />
+          <Stack.Screen
+            name="NewGoal"
+            component={SmartQuestionsScreen}
+            options={{
+              headerShown: true,
+            }}
+          />
+          <Stack.Screen name="UserProfile" component={UserProfileScreen} />
         </Stack.Navigator>
       </LinearGradient>
     </NavigationContainer>
@@ -106,5 +175,9 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignContent: "center",
+  },
+  tabBarStyle: {
+    height: 80,
+    paddingBottom: 80 - 49, // Adjust paddingBottom to keep tab icons centered vertically
   },
 });
