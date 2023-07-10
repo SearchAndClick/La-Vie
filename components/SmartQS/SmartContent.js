@@ -5,6 +5,7 @@ import ButtonYesNo from './ButtonYesNo';
 import ChooseDate from './ChooseDate';
 import Reminder from './Reminder';
 import SmartForm from './SmartForm';
+import Steps from './Steps';
 
 function SmartContent(saveData){
   const [inputInvalid, setInputInvalid] = useState({
@@ -36,8 +37,9 @@ function SmartContent(saveData){
 
   return (
     <View>
-      <Text>SMART Questions</Text>
+      <Text style = {styles.title} >SMART Questions</Text>
       <SmartForm/>
+      <Steps/>
       <ChooseDate/>
       <Reminder/>
       <ButtonYesNo/>
@@ -49,6 +51,13 @@ function SmartContent(saveData){
 }
 
 const styles = StyleSheet.create({
+    title: {
+      fontFamily: "montserrat-bold",
+      fontSize: 25,
+      color: "white",
+      alignSelf: 'center',
+      marginTop: 30,
+    },
     smartContainer: {},
 
 })

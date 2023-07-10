@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { StyleSheet, View, Text, Touchable, TouchableOpacity } from 'react-native';
 
-import Button from '../ui/Button';
+import Button from '../UI/Button';
 import Input from './Input';
 
 function AuthForm({ isLogin, onSubmit, credentialsInvalid }) {
