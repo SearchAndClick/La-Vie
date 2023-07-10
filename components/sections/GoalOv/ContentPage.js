@@ -12,10 +12,10 @@ function ContentPage() {
   return (
     <View style={styles.container}>
       <HeaderGoal />
-      <GoalName />
+      <GoalName name="Goal Name" />
       <View style={styles.progressContainer}>
         <Text style={styles.progressText}>Progress Bar</Text>
-        <ProgressBar percentage="60" justify="flex-end" color="#023E8A"/>
+        <ProgressBar percentage="0" justify="flex-end" color="white"/>
       </View>
       <Deadline />
     </View>

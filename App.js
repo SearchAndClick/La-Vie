@@ -31,9 +31,15 @@ function TabNavigator(initialScreen) {
       screenOptions={{
         contentStyle: { backgroundColor: "transparent" },
         headerShown: false,
-      }}
-      tabBarOptions={{
-        style: styles.tabBarStyle, // Apply the custom style here
+        tabBarBackground: () => (
+          <LinearGradient
+            style={styles.background}
+            colors={["#D9D9D9", "#CAF0F8"]}
+          ></LinearGradient>
+        ),
+        tabBarInactiveTintColor: 'black',
+        tabBarActiveTintColor: '#00B4D8',
+        tabBarStyle: { height: 70 },
       }}
     >
       <Tab.Screen
@@ -99,17 +105,8 @@ function AuthenticatedStack() {
         contentStyle: { backgroundColor: "transparent" },
         headerShown: false,
       }}
-      initialRouteName="Sementara"
+      initialRouteName="Home"
     >
-      <Stack.Screen
-        name="Sementara"
-        component={GoalOverviewScreen}
-        options={{
-          headerShown: true,
-          headerStyle: { backgroundColor: "transparent" },
-          headerShadowVisible: false,
-        }}
-      />
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen
         name="GoalPlanner"
@@ -145,6 +142,15 @@ function AuthenticatedStack() {
         component={UserProfileScreen}
         options={{
           headerShown: false,
+        }}
+      />
+      <Stack.Screen
+        name="Goal Overview"
+        component={GoalOverviewScreen}
+        options={{
+          headerShown: true,
+          headerStyle: { backgroundColor: "transparent" },
+          headerShadowVisible: false,
         }}
       />
     </Stack.Navigator>

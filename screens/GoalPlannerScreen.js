@@ -1,21 +1,21 @@
-import { StyleSheet, Text, View } from "react-native";
-import React, { useLayoutEffect } from "react";
+import { StyleSheet, Text, View, Button, Platform } from "react-native";
+import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
+import DateTimePicker from "@react-native-community/datetimepicker";
+import { Calendar } from "react-native-calendars";
 
 export default function GoalPlannerScreen() {
-  const navigation = useNavigation();
-
-  useLayoutEffect(() => {
-    navigation.setOptions({
-      headerBackVisible: false, // ini dia
-    });
-  }, [navigation]);
-
   return (
     <LinearGradient style={styles.background} colors={["#03045E", "#023E8A"]}>
       <View>
-        <Text>GoalPlannerScreen</Text>
+        <Text style={styles.header}>Goal Planner</Text>
+        <Calendar style={styles.calender} />
+      </View>
+      <View style={styles.container}>
+        <Text style={{ fontFamily: "montserrat-bold", fontSize: 19 }}>
+          List of Goals
+        </Text>
       </View>
     </LinearGradient>
   );
@@ -24,5 +24,29 @@ export default function GoalPlannerScreen() {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
+  },
+  container: {
+    backgroundColor: "white",
+    marginTop: 20,
+    paddingVertical: 30,
+    paddingHorizontal: 40,
+    height: "100%",
+    width: "100%",
+    borderWidth: 2,
+    borderRadius: 20,
+  },
+  header: {
+    alignSelf: "center",
+    fontFamily: "montserrat-bold",
+    fontSize: 25,
+    color: "white",
+    marginTop: 60,
+  },
+  calender: {
+    alignSelf: "center",
+    borderRadius: 20,
+    padding: 10,
+    marginTop: 20,
+    width: "90%",
   },
 });

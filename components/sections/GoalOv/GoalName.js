@@ -2,12 +2,12 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 
-const GoalName = () => {
+const GoalName = ({ name}) => {
   function settingNamaGoal() {}
 
   return (
     <View style={styles.container}>
-      <Text style={styles.textStyle}>GoalName</Text>
+      <Text style={styles.textStyle}>{ name }</Text>
     </View>
   );
 };
