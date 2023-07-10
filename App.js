@@ -17,6 +17,7 @@ import CommunityPageScreen from "./screens/CommunityPageScreen";
 import GoalPlannerScreen from "./screens/GoalPlannerScreen";
 import SmartQuestionsScreen from "./screens/SmartQuestionsScreen";
 import UserProfileScreen from "./screens/UserProfileScreen";
+import GoalOverviewScreen from "./screens/UserProfileScreen";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -93,14 +94,37 @@ function AuthStack() {
 
 function AuthenticatedStack() {
   return (
-    <Stack.Navigator
-      screenOptions={{
-        headerShown: false,
-        contentStyle: { backgroundColor: "transparent" },
-        // contentStyle: { backgroundColor: Colors.primary100 },
-      }}
-    >
+    <Stack.Navigator screenOptions={{
+      contentStyle: { backgroundColor: "transparent" },
+      headerShown: false,}} initialScreen="Sementara">
+      <Stack.Screen name="Sementara" component={GoalOverviewScreen} />
       <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen
+        name="GoalPlanner"
+        component={() => TabNavigator("GoalPlanner")}
+      />
+      <Stack.Screen
+        name="CommunityPage"
+        component={() => TabNavigator("CommunityPage")}
+      />
+      <Stack.Screen
+        name="Settings"
+        component={SettingsScreen}
+        options={{
+          headerShown: true,
+        }}
+      />
+      <Stack.Screen
+        name="NewGoal"
+        component={SmartQuestionsScreen}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <Stack.Screen name="UserProfile" component={UserProfileScreen}
+        options={{
+          headerShown: false,
+        }} />
     </Stack.Navigator>
   );
 }
@@ -134,37 +158,7 @@ export default function App() {
     <NavigationContainer>
       <StatusBar style="light" />
       <LinearGradient style={styles.background} colors={["#03045E", "#023E8A"]}>
-        <Stack.Navigator
-          screenOptions={{
-            contentStyle: { backgroundColor: "transparent" },
-            headerShown: false,
-          }}
-        >
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen
-            name="GoalPlanner"
-            component={() => TabNavigator("GoalPlanner")}
-          />
-          <Stack.Screen
-            name="CommunityPage"
-            component={() => TabNavigator("CommunityPage")}
-          />
-          <Stack.Screen
-            name="Settings"
-            component={SettingsScreen}
-            options={{
-              headerShown: true,
-            }}
-          />
-          <Stack.Screen
-            name="NewGoal"
-            component={SmartQuestionsScreen}
-            options={{
-              headerShown: false,
-            }}
-          />
-          <Stack.Screen name="UserProfile" component={UserProfileScreen} />
-        </Stack.Navigator>
+        <AuthenticatedStack/>
       </LinearGradient>
     </NavigationContainer>
   );
