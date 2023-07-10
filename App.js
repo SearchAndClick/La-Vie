@@ -17,7 +17,7 @@ import CommunityPageScreen from "./screens/CommunityPageScreen";
 import GoalPlannerScreen from "./screens/GoalPlannerScreen";
 import SmartQuestionsScreen from "./screens/SmartQuestionsScreen";
 import UserProfileScreen from "./screens/UserProfileScreen";
-import GoalOverviewScreen from "./screens/UserProfileScreen";
+import GoalOverviewScreen from "./screens/GoalOverviewScreen";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();

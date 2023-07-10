@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { Text, View, StyleSheet } from 'react-native'
+import React from 'react'
+import { Text, View, StyleSheet} from 'react-native'
 import Deadline from './Deadline'
 import GoalName from './GoalName'
 import GoalSteps from './GoalSteps'
@@ -11,7 +11,6 @@ import TodaysTar from './TodaysTar'
 function ContentPage (){
     return (
         <View style = {styles.container}>
-            <Text>apasi</Text>
             <HeaderGoal/>
             <GoalName/>
             <ProgressBar/>
@@ -24,7 +23,6 @@ function ContentPage (){
 }
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
     }
 })
 
