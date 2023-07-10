@@ -1,5 +1,5 @@
-import { View, Text } from 'react-native'; 
-import React from 'react'; 
+import { View, Text, StyleSheet } from 'react-native'; 
+import {useState} from 'react'; 
 
 function Steps () {
     // data2 langkah-langkahnya nanti, dibikin kosong dulu 
@@ -16,9 +16,33 @@ function Steps () {
 
     return (
         <View>
-        <Text>Steps</Text>
+            <Text style={styles.textQuestion}>Apa saja langkah-langkah yang perlu dilakukan ?</Text>
+            <View style={styles.inputBox}>
+
+            </View>
         </View>
     )
 }
 
+const styles = StyleSheet.create({
+    textQuestion: {
+        fontFamily: "montserrat-bold",
+        fontSize: 15,
+        color: "white",
+        marginLeft: 20,
+        marginRight: 20,
+        marginTop: 15,
+    },
+    inputBox : {
+        borderRadius:20, 
+        height:100,
+        color:'black',
+        backgroundColor:'white',
+        padding:10,
+        marginTop: 10,
+        marginEnd: 10,
+        marginLeft: 20, 
+        marginRight: 20,
+    }
+})
 export default Steps

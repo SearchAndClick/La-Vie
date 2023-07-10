@@ -160,7 +160,7 @@ export default function App() {
             name="NewGoal"
             component={SmartQuestionsScreen}
             options={{
-              headerShown: true,
+              headerShown: false,
             }}
           />
           <Stack.Screen name="UserProfile" component={UserProfileScreen} />
