@@ -1,11 +1,11 @@
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
-import ButtonBackSave from './ButtonBackSave';
 import ButtonYesNo from './ButtonYesNo';
 import ChooseDate from './ChooseDate';
-import Reminder from './Reminder';
+import CatAndNotes from './CatandNotes';
 import SmartForm from './SmartForm';
 import Steps from './Steps';
+import { LinearGradient } from 'expo-linear-gradient';
 
 function SmartContent(saveData){
   const [inputInvalid, setInputInvalid] = useState({
@@ -40,11 +40,13 @@ function SmartContent(saveData){
       <SmartForm/>
       <Steps/>
       <ChooseDate/>
-      <Reminder/>
+      <CatAndNotes/>
       <ButtonYesNo/>
-      <ButtonBackSave
-        onSave = {submitHandler}
-      />
+      <LinearGradient start= {[0,0]} end= {[0,1]} colors={['#0077B6','#023E8A']} style= {styles.gradien} >
+        <TouchableOpacity >
+          <Text style = {styles.saveText}>Save</Text>
+        </TouchableOpacity>
+      </LinearGradient>
     </View>
   )
 }
@@ -57,8 +59,22 @@ const styles = StyleSheet.create({
       alignSelf: 'center',
       marginTop: 30,
     },
-    smartContainer: {},
-
+    gradien: {
+      height: 45,
+      marginHorizontal: 20,
+      marginTop: 15, 
+      borderRadius: 20,
+      borderBottomWidth: 3,
+      borderColor: '#03045E',
+      alignItems: 'center', 
+      paddingTop: 10
+    },
+    saveText: {
+      fontFamily: "montserrat-bold",
+      fontSize: 15,
+      color: "white",
+      height: 35,
+    },
 })
 
 export default SmartContent

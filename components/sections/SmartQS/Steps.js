@@ -16,9 +16,8 @@ function Steps () {
 
     return (
         <View>
-            <Text style={styles.textQuestion}>Apa saja langkah-langkah yang perlu dilakukan ?</Text>
+            <Text style={styles.textQuestion}>What are the steps necessary to reach it?</Text>
             <View style={styles.inputBox}>
-
             </View>
         </View>
     )
