@@ -7,7 +7,7 @@ import { Calendar } from "react-native-calendars";
 
 export default function GoalPlannerScreen() {
   return (
-    <LinearGradient style={styles.background} colors={["#03045E", "#023E8A"]}>
+    <LinearGradient style={{ flex: 1 }} colors={["#03045E", "#023E8A"]}>
       <View>
         <Text style={styles.header}>Goal Planner</Text>
         <Calendar style={styles.calender} />
@@ -22,9 +22,6 @@ export default function GoalPlannerScreen() {
 }
 
 const styles = StyleSheet.create({
-  background: {
-    flex: 1,
-  },
   container: {
     backgroundColor: "white",
     marginTop: 20,
@@ -44,8 +41,8 @@ const styles = StyleSheet.create({
   },
   calender: {
     alignSelf: "center",
-    borderRadius: 20,
-    padding: 10,
+    borderRadius: 10,
+    padding: 2,
     marginTop: 20,
     width: "90%",
   },
