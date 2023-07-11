@@ -18,7 +18,7 @@ function AuthForm({ isLogin, onSubmit, credentialsInvalid }) {
   } = credentialsInvalid;
 
   function updateInputValueHandler(inputType, enteredValue) {
-    switch (inputTypSe) {
+    switch (inputType) {
       case 'email':
         setEnteredEmail(enteredValue);
         break;

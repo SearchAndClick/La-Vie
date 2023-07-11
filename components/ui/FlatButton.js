@@ -10,11 +10,8 @@ function FlatButton({ children, text, onPress }) {
       </Text>
       <Pressable
         style={({ pressed }) => [styles.button, pressed && styles.pressed]}
-        onPress={onPress}
-      >
-        <View>
-          <Text style={styles.buttonText}>{children}</Text>
-        </View>
+        onPress={onPress}>
+        <Text style={styles.buttonText}>{children}</Text>
       </Pressable>
     </View>
   );
@@ -25,8 +22,9 @@ export default FlatButton;
 const styles = StyleSheet.create({
   viewya: {
     flexDirection: 'row',
-    width: "70%",
+    width: "90%",
     alignItems: 'center',
+    justifyContent: 'center',
     alignSelf: 'center',
   },
   button: {

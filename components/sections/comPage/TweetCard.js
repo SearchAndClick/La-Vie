@@ -1,8 +1,10 @@
 import { View, Text, StyleSheet, Image, Pressable, TouchableOpacity} from 'react-native'
 import React, { useState } from 'react'
 import { Ionicons } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
-function TweetCard ({ goalName, userImage, userName, category, startDate, endDate,}) {
+function TweetCard ({ goalName, userImage, userName, category, startDate, deadline, color, id}) {
+  const navigation = useNavigation();
   const [liked, setLiked] = useState(false); 
 
   function disukai(){
@@ -10,21 +12,22 @@ function TweetCard ({ goalName, userImage, userName, category, startDate, endDat
   }
 
   function toGoalDetail(){
-
+    {/** Sementara gini dulu */}
+    navigation.navigate("Each Goal Community", {title: goalName});
   }
 
   return (
     <TouchableOpacity style= {styles.container} onPress= {toGoalDetail}>
       <View style = {styles.headerContainer}>
         <View style= {styles.titleView}>
-          <Text style = {styles.titleText}>Build a portofolio website ya ya ya</Text>
+          <Text style = {styles.titleText}>{goalName}</Text>
         </View>
         <View style= {styles.userProfileTemp}>
           <Image />
         </View>
       </View>
-      <Text style = {styles.usernameText}>By Brian May</Text>
-      <Text style = {styles.dateText}>25 February 2023 - 31 March 2023</Text>
+      <Text style = {styles.usernameText}>By Username</Text>
+      <Text style = {styles.dateText}>25 February 2023 - {deadline}</Text>
       <View style = {styles.footerView}>
         <View style = {styles.likesBox}>
           <Text style = {styles.likesText}>45 Likes</Text>

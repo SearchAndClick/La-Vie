@@ -3,10 +3,11 @@ import React, { useState } from "react";
 import { Ionicons } from "@expo/vector-icons";
 
 function FilterBox() {
+  /*
   const[popChosen, setPopChosen] = useState(false); 
   const[recChosen, setRecChosen] = useState(false); 
   const[trenChosen, setTrenChosen] = useState(false);
-
+  
   function dipilih(number){
     switch (number) {
       case 1:
@@ -19,7 +20,7 @@ function FilterBox() {
         setTrenChosen((prevState) => !prevState);
         break;   
     }
-  }
+  }*/
 
   return (
     <View style={styles.filterContainer}>
@@ -29,14 +30,14 @@ function FilterBox() {
       </View>
       <View style= {styles.categoryBox}></View>
       <Text style= {styles.descText}>Sort By</Text>
-      <View style= {{flexDirection: 'row', marginTop: 5}}>
-        <TouchableHighlight style = {popChosen? styles.sortBoxChosen:styles.sortBox} onPress={dipilih(1)}>
+      <View style= {{flexDirection: 'row', marginTop: 5, justifyContent: 'center'}}>
+        <TouchableHighlight style = {styles.sortBox}>
           <Text style= {styles.smalltext}>Most Popular</Text>
         </TouchableHighlight>
-        <TouchableHighlight style = {recChosen? styles.sortBoxChosen:styles.sortBox} onPress={dipilih(2)}> 
+        <TouchableHighlight style = {styles.sortBox} > 
           <Text style= {styles.smalltext}>Most Recent</Text>
         </TouchableHighlight>
-        <TouchableHighlight style = {trenChosen? styles.sortBoxChosen:styles.sortBox} onPress={dipilih(3)}> 
+        <TouchableHighlight style = {styles.sortBox} > 
           <Text style= {styles.smalltext}>Trending</Text>
         </TouchableHighlight>
       </View>

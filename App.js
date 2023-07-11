@@ -19,6 +19,7 @@ import SmartQuestionsScreen from "./screens/SmartQuestionsScreen";
 import UserProfileScreen from "./screens/UserProfileScreen";
 import GoalOverviewScreen from "./screens/GoalOverviewScreen";
 import Favorite from "./screens/Favorite";
+import EachGoalScreen from "./screens/EachGoalScreen";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -169,6 +170,17 @@ function AuthenticatedStack() {
           headerStyle: { backgroundColor: "transparent" },
           headerTintColor: "white",
           headerTitleStyle: { fontFamily: "montserrat-bold", fontSize: 25 }, 
+          headerShadowVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="Each Goal Community"
+        component={EachGoalScreen}
+        options={{
+          headerShown: true,
+          headerTitle: '',
+          headerTintColor: "white",
+          headerStyle: { backgroundColor: "transparent" },
           headerShadowVisible: false,
         }}
       />

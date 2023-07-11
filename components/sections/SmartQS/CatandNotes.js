@@ -10,7 +10,7 @@ function CatAndNotes(){
       <Ionicons name= "funnel" size={15} color= "black" />
       </TouchableOpacity>
       <Text style= {styles.textQuestion}>Notes</Text>
-      <TextInput style= {styles.inputBox}></TextInput>
+      <TextInput style= {styles.inputBox} multiline= {true}></TextInput>
     </View>
   )
 }
