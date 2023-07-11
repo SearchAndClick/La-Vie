@@ -37,8 +37,8 @@ function TabNavigator(initialScreen) {
             colors={["#D9D9D9", "#CAF0F8"]}
           ></LinearGradient>
         ),
-        tabBarInactiveTintColor: 'black',
-        tabBarActiveTintColor: '#00B4D8',
+        tabBarInactiveTintColor: "black",
+        tabBarActiveTintColor: "#00B4D8",
         tabBarStyle: { height: 70 },
       }}
     >
@@ -156,6 +156,7 @@ function AuthenticatedStack() {
           headerShown: true,
           headerStyle: { backgroundColor: "transparent" },
           headerShadowVisible: false,
+          headerTitleStyle: { fontSize: 1 },
         }}
       />
     </Stack.Navigator>

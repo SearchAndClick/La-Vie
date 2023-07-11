@@ -3,7 +3,7 @@ import React from "react";
 import { GOALS } from "../../data/dummy_data";
 import GoalItem from "./GoalItem";
 
-export default function GoalsList({ color }) {
+export default function GoalsList() {
   function renderGoalItem(itemData) {
     const item = itemData.item;
     const goalItemProps = {

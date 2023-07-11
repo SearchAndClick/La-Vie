@@ -2,10 +2,10 @@ import React from "react";
 import { Text, View, StyleSheet } from "react-native";
 import Deadline from "./Deadline";
 import GoalName from "./GoalName";
-import GoalSteps from "./GoalSteps";
 import HeaderGoal from "./HeaderGoal";
+import ProgressBar from "../ProgressBar"; 
+import GoalSteps from "./GoalSteps";
 import Notes from "./Notes";
-import ProgressBar from "../ProgressBar";
 import TodaysTar from "./TodaysTar";
 
 function ContentPage() {
@@ -21,6 +21,7 @@ function ContentPage() {
     </View>
   );
 }
+
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
