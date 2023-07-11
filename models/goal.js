@@ -1,7 +1,8 @@
 class Goal {
   constructor(
+    id,
     title,
-    descrition,
+    description,
     progress,
     deadline,
     category,
