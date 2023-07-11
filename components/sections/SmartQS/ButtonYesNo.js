@@ -1,7 +1,7 @@
 import { View, Text, TouchableHighlight, StyleSheet } from 'react-native'
 import React, { useState } from 'react'
 
-const ButtonYesNo = (onPress) => {
+function ButtonYesNo(onPress){
   const [isEnabled, setIsEnabled] = useState(false);
   
   const milihYa = () => {
@@ -15,14 +15,14 @@ const ButtonYesNo = (onPress) => {
   return (
     <View>
       <Text style= {styles.textQuestion}>
-      Apakah anda ingin goal ini dilihat banyak orang ?
+      Do you want this goal to be visible to many people?
       </Text>
       <View style = {styles.switchContainer}>
-        <TouchableHighlight style = { isEnabled? styles.switchYesChosen : styles.switchYes} onPress={milihYa}>
-          <Text style = {styles.textStyle}>Ya</Text>
+        <TouchableHighlight style = { isEnabled? styles.switchYesChosen : styles.switchNo} onPress={milihYa}>
+          <Text style = {styles.textStyle}>Yes</Text>
         </TouchableHighlight>
         <TouchableHighlight style = { isEnabled? styles.switchNo: styles.switchNoChosen} onPress={milihTidak}>
-          <Text style = {styles.textStyle}>Tidak</Text>
+          <Text style = {styles.textStyle}>No</Text>
         </TouchableHighlight>
       </View>
     </View>
@@ -57,23 +57,16 @@ const styles = StyleSheet.create({
     fontFamily: "montserrat-bold",
     fontSize: 15,
     color: "white",
-    margin: 10,
-  },
-  switchYes: {
-    borderBottomLeftRadius: 20, 
-    borderTopLeftRadius:20,
-    width: "50%",
-    backgroundColor: 'white',
   },
   switchYesChosen: {
     borderBottomLeftRadius: 20, 
     borderTopLeftRadius:20,
     width: "50%",
     backgroundColor: 'green',
+    justifyContent: 'center'
   },
   switchNo:{
-    borderBottomRightRadius: 20, 
-    borderTopRightRadius: 20,
+    borderRadius: 20,
     width: "50%",
     backgroundColor: 'white',
   },
@@ -82,5 +75,6 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 20,
     width: "50%",
     backgroundColor: 'red',
+    justifyContent: 'center'
   },
 })

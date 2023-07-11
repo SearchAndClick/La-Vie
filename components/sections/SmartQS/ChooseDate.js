@@ -7,13 +7,11 @@ function ChooseDate (){
   
   return (
     <View>
-      <Text style = {styles.textQuestion}>Kapan goal ini ditargetkan untuk selesai ?</Text>
-      <View style = {styles.inputDateBox}>
-        <Text> {date} </Text> 
-        <TouchableOpacity style= {styles.pilihCalender}>
+      <Text style = {styles.textQuestion}>When is the deadline target for the goal?</Text>
+        <TouchableOpacity style = {styles.inputDateBox}>
+        <Text>{date}</Text> 
           <Ionicons name="calendar-outline" size={15} color="black" />
         </TouchableOpacity>
-      </View>
     </View>
   )
 }
@@ -23,8 +21,7 @@ const styles = StyleSheet.create({
     fontFamily: "montserrat-bold",
     fontSize: 15,
     color: "white",
-    marginLeft: 20,
-    marginRight: 20,
+    marginHorizontal: 20,
     marginTop: 10,
   },
   inputDateBox : {
@@ -32,18 +29,12 @@ const styles = StyleSheet.create({
     height: 35,
     color: 'black',
     backgroundColor: 'white',
-    padding: 10,
     paddingVertical: 10,
     paddingHorizontal: 20,
     marginTop: 10,
-    marginEnd: 10,
-    marginLeft: 20, 
-    marginRight: 20,
+    marginHorizontal: 20,
     flexDirection: 'row',
     justifyContent: 'flex-end',
-  },
-  pilihCalender: {
-    alignSelf: 'flex-end',
   }
 })
 

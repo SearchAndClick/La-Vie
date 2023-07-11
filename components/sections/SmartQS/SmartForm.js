@@ -34,18 +34,18 @@ function SmartForm (inputInvalid) {
     }}   
     
     return (
-        <View>
+        <View style = {{marginTop: 10}}>
             <InputGoal
-                namaInput={'Apa goal anda ?'}
+                namaInput={'What is your goal?'}
                 isInvalid={namaInvalid}
                 onUpdateValue={updateInputValueHandler(this,'namaGoal')}
-                saranPesan={'Nama Goal'}
+                saranPesan={'Goal name'}
             />
             <InputGoal
-                namaInput={'Jelaskan secara spesifik goal anda!'}
+                namaInput={'Describe your goal specifically!'}
                 isInvalid = {descInvalid}
                 onUpdateValue={updateInputValueHandler.bind(this, 'goalDesc')}
-                saranPesan={'Jelaskan dengan sangat spesifik'}
+                saranPesan={'Describe it in a very specific way'}
             />
         </View>
     )

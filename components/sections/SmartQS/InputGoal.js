@@ -24,8 +24,7 @@ const styles = StyleSheet.create({
       fontFamily: "montserrat-bold",
       fontSize: 15,
       color: "white",
-      marginLeft: 20,
-      marginRight: 20,
+      marginHorizontal: 20,
       marginTop: 10,
     },
     inputBox : {
@@ -33,11 +32,9 @@ const styles = StyleSheet.create({
       height: 35,
       color: 'black',
       backgroundColor: 'white',
-      padding:10,
       marginTop: 10,
-      marginEnd: 10,
-      marginLeft: 20, 
-      marginRight: 20,
+      marginHorizontal: 20,
+      paddingLeft: 20,
     }
 })
 
