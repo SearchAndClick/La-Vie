@@ -1,36 +1,46 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
+import { useNavigation } from "@react-navigation/native";
 import React from "react";
 
-export default function GoalItem({ title, deadline, category, color }) {
+export default function GoalItem({ title, deadline, category, color, id }) {
+  const navigation = useNavigation();
+
+  function selectGoalHandler() {
+    navigation.navigate("Goal Overview", {
+      goalId: id,
+    });
+  }
   return (
-    <View style={styles.goalContainer}>
-      <View style={[styles.circleBorder, { borderColor: color }]}>
-        <View style={[styles.circle, { backgroundColor: color }]}></View>
-      </View>
-      <View style={styles.textContainer}>
-        <Text
-          numberOfLines={1}
-          ellipsizeMode="tail"
-          style={{ fontFamily: "roboto-regular", fontSize: 17 }}
-        >
-          {title}
-        </Text>
-        <Text
-          style={{
-            fontFamily: "montserrat-bold",
-            fontSize: 14,
-            color: "#03045E",
-          }}
-        >
-          {deadline}
-        </Text>
-        <View style={styles.category}>
-          <Text style={{ fontFamily: "montserrat-bold", fontSize: 13 }}>
-            {category}
+    <Pressable android_ripple={{ color: '#ccc'}} onPress={selectGoalHandler}>
+      <View style={styles.goalContainer}>
+        <View style={[styles.circleBorder, { borderColor: color }]}>
+          <View style={[styles.circle, { backgroundColor: color }]}></View>
+        </View>
+        <View style={styles.textContainer}>
+          <Text
+            numberOfLines={1}
+            ellipsizeMode="tail"
+            style={{ fontFamily: "roboto-regular", fontSize: 17 }}
+          >
+            {title}
           </Text>
+          <Text
+            style={{
+              fontFamily: "montserrat-bold",
+              fontSize: 14,
+              color: "#03045E",
+            }}
+          >
+            {deadline}
+          </Text>
+          <View style={[styles.category, { backgroundColor: color }]}>
+            <Text style={{ fontFamily: "montserrat-bold", fontSize: 13 }}>
+              {category}
+            </Text>
+          </View>
         </View>
       </View>
-    </View>
+    </Pressable>
   );
 }
 
@@ -70,6 +80,5 @@ const styles = StyleSheet.create({
     width: 100,
     borderRadius: 20,
     padding: 1,
-    backgroundColor: "red",
   },
 });

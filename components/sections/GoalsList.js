@@ -11,6 +11,7 @@ export default function GoalsList({ color }) {
       deadline: item.deadline,
       category: item.category,
       color: item.color,
+      id: item.id,
     };
 
     return (
