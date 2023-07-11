@@ -6,6 +6,8 @@ import ProgressBar from "../components/sections/ProgressBar";
 import GoalContainer from "../components/sections/GoalOv/GoalContainer";
 import IconButton from "../components/IconButton";
 import { GOALS } from "../data/dummy_data";
+import Notes from "../components/sections/GoalOv/Notes";
+import GoalVisibility from "../components/sections/GoalOv/GoalVisibility";
 
 function GoalOverviewScreen({ route, navigation }) {
   const goalId = route.params.goalId;
@@ -52,6 +54,8 @@ function GoalOverviewScreen({ route, navigation }) {
           color="#0077B6"
           selected={selectedGoal.goalSteps}
         />
+        <Notes notes={selectedGoal.notes} />
+        <GoalVisibility />
       </View>
     </ScrollView>
   );
@@ -65,7 +69,6 @@ const styles = StyleSheet.create({
   },
   progressContainer: {
     width: "90%",
-    marginTop: 10,
   },
   progressText: {
     position: "absolute",
