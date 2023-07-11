@@ -5,7 +5,11 @@ import { Ionicons } from "@expo/vector-icons";
 function OptionTile({ option, logo, onPress, screen }) {
   return (
     <LinearGradient style={styles.optionTile} colors={["#0077B6", "#00B4D8"]}>
-      <Pressable onPress={() => onPress(screen)} style={styles.press} android_ripple={{ color: "#ccc" }}>
+      <Pressable
+        onPress={() => onPress(screen)}
+        style={styles.press}
+        android_ripple={{ color: "#ccc" }}
+      >
         <View>
           <Ionicons style={styles.icon} name={logo} size={45} color="white" />
           <Text style={styles.optionText}>{option}</Text>

@@ -11,7 +11,7 @@ function HomeScreen() {
   useLayoutEffect(() => {
     navigation.setOptions({
       tabBarVisible: false,
-      headerBackVisible: false, // ini dia
+      headerBackVisible: false, 
     });
   }, [navigation]);
 
@@ -25,7 +25,7 @@ function HomeScreen() {
       <PriorityGoal
         goal="Get A on my Math examination"
         date="24 September 2023"
-        percentage="0"
+        percentage="15"
       />
 
       <OptionsCard />

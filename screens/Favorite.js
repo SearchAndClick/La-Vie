@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import { LinearGradient } from 'expo-linear-gradient'
 // Sementara pakai TweetList hardcode dulu
@@ -22,6 +22,7 @@ const styles = StyleSheet.create({
     marginVertical: "20%",
     alignSelf: 'center',
     borderRadius: 20,
+    overflow: 'hidden',
   }
 })
 

@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { StatusBar } from "expo-status-bar";
 
-import { StyleSheet, Text } from "react-native";
+import { StyleSheet } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import { useFonts } from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
@@ -39,8 +39,8 @@ function TabNavigator(initialScreen) {
             colors={["#D9D9D9", "#CAF0F8"]}
           ></LinearGradient>
         ),
-        tabBarInactiveTintColor: 'black',
-        tabBarActiveTintColor: '#00B4D8',
+        tabBarInactiveTintColor: "black",
+        tabBarActiveTintColor: "#00B4D8",
         tabBarStyle: { height: 70 },
       }}
     >
@@ -91,7 +91,6 @@ function AuthStack() {
       screenOptions={{
         headerShown: false,
         contentStyle: { backgroundColor: "transparent" },
-        // contentStyle: { backgroundColor: Colors.primary100 },
       }}
     >
       <Stack.Screen name="Login" component={LoginScreen} />
@@ -129,6 +128,10 @@ function AuthenticatedStack() {
         options={{
           headerShown: true,
           headerTitleAlign: "center",
+          headerStyle: { backgroundColor: "transparent" },
+          headerShadowVisible: false,
+          headerTintColor: "white",
+          headerTitleStyle: { fontFamily: "montserrat-bold", fontSize: 25 },
         }}
       />
       <Stack.Screen
@@ -158,6 +161,8 @@ function AuthenticatedStack() {
           headerShown: true,
           headerStyle: { backgroundColor: "transparent" },
           headerShadowVisible: false,
+          headerTitleStyle: { fontSize: 1, color: "#03045E" },
+          headerTintColor: "white",
         }}
       />
       <Stack.Screen
@@ -169,7 +174,7 @@ function AuthenticatedStack() {
           headerTitle: "Favorite",
           headerStyle: { backgroundColor: "transparent" },
           headerTintColor: "white",
-          headerTitleStyle: { fontFamily: "montserrat-bold", fontSize: 25 }, 
+          headerTitleStyle: { fontFamily: "montserrat-bold", fontSize: 25 },
           headerShadowVisible: false,
         }}
       />
@@ -209,7 +214,6 @@ export default function App() {
   });
 
   if (!fontsLoaded) {
-    // menahan splash screen sebelum semua font muncul
     return <AppLoading />;
   }
 

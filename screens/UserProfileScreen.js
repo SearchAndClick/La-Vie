@@ -1,9 +1,9 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { LinearGradient } from 'expo-linear-gradient'
-import GoalsList from '../components/sections/GoalsList'
 import { Ionicons } from "@expo/vector-icons"
 import { useNavigation } from "@react-navigation/native";
+import GoalsList from '../components/sections/GoalsList'
 
 export default function UserProfileScreen() {
   const navigation = useNavigation();
@@ -82,6 +82,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white', 
     alignSelf: 'center', 
     marginHorizontal: "5%",
+    overflow: 'hidden',
   }, 
   descText: {
     fontFamily: 'montserrat-bold',
