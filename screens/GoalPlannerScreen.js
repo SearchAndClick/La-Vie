@@ -4,6 +4,7 @@ import { useNavigation } from "@react-navigation/native";
 import { LinearGradient } from "expo-linear-gradient";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import { Calendar } from "react-native-calendars";
+import GoalsList from "../components/sections/GoalsList";
 
 export default function GoalPlannerScreen() {
   return (
@@ -13,9 +14,10 @@ export default function GoalPlannerScreen() {
         <Calendar style={styles.calender} />
       </View>
       <View style={styles.container}>
-        <Text style={{ fontFamily: "montserrat-bold", fontSize: 19 }}>
+        <Text style={styles.listHeader}>
           List of Goals
         </Text>
+        <GoalsList />
       </View>
     </LinearGradient>
   );
@@ -29,7 +31,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 40,
     height: "100%",
     width: "100%",
-    borderWidth: 2,
     borderRadius: 20,
   },
   header: {
@@ -46,4 +47,11 @@ const styles = StyleSheet.create({
     marginTop: 20,
     width: "90%",
   },
+  listHeader: {
+    fontFamily: "montserrat-bold", 
+    fontSize: 19,
+    paddingBottom: 7,
+    borderBottomWidth: 2,
+    borderBottomColor: "#D9D9D9",
+  }
 });
