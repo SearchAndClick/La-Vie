@@ -1,27 +1,28 @@
-class Meal {
+class Goal {
   constructor(
     title,
+    descrition,
     progress,
     deadline,
-    visibility,
     category,
     todaysTarget,
     goalSteps,
     notes,
     color,
+    isPublic,
     isFavorite
   ) {
     this.title = title;
     this.progress = progress;
     this.deadline = deadline;
-    this.visibility = visibility;
     this.category = category;
     this.todaysTarget = todaysTarget;
     this.goalSteps = goalSteps;
     this.notes = notes;
     this.color = color;
+    this.isPublic = isPublic;
     this.isFavorite = isFavorite;
   }
 }
 
-export default Meal;
+export default Goal;
