@@ -2,6 +2,7 @@ import Goal from "../models/goal";
 
 export const GOALS = [
   new Goal(
+    1,
     "Membakar 5 kg lemak",
     "Goal ini betujuan untuk menurunkan berat badan dan menjadi lebih atletis",
     15,
@@ -25,6 +26,7 @@ export const GOALS = [
     false
   ),
   new Goal(
+    2,
     "Membaca 48 Laws of Power",
     "Aku pengen belajar cara memanipulasi orang hihi",
     20,
@@ -47,6 +49,7 @@ export const GOALS = [
     false
   ),
   new Goal(
+    3,
     "Mendapatkan A di ulangan matematika",
     "aku punya goal ini untuk ngebanggain orang tua",
     80,
@@ -68,6 +71,7 @@ export const GOALS = [
     false
   ),
   new Goal(
+    4,
     "Get accepted to harvard medical school",
     "I am a highschool student from California. I have a big interest in biology and i am currently learning to represent my highschool in a competition. My dream is to get accepted at Harvard and study medecine.",
     63,
