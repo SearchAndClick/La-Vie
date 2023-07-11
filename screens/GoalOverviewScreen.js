@@ -1,24 +1,60 @@
-import { View, Text, StyleSheet } from "react-native";
+import { useLayoutEffect } from "react";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import Deadline from "../components/sections/GoalOv/Deadline";
 import GoalName from "../components/sections/GoalOv/GoalName";
 import HeaderGoal from "../components/sections/GoalOv/HeaderGoal";
 import ProgressBar from "../components/sections/ProgressBar";
-import GoalsList from "../components/sections/GoalsList";
 import GoalContainer from "../components/sections/GoalOv/GoalContainer";
+import IconButton from "../components/IconButton";
+import { GOALS } from "../data/dummy_data";
 
-function GoalOverviewScreen({ route }) {
-  const goalId = route.params;
+function GoalOverviewScreen({ route, navigation }) {
+  const goalId = route.params.goalId;
+
+  const selectedGoal = GOALS.find((goal) => goalId === goal.id);
+
+  function deleteButtonPressHandler() {
+    console.log("deleted goal");
+  }
+
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerRight: () => {
+        return (
+          <IconButton
+            color="#EA4335"
+            onPress={deleteButtonPressHandler}
+          />
+        );
+      },
+    });
+  }, [navigation, deleteButtonPressHandler]);
+
   return (
-    <View style={styles.container}>
-      <HeaderGoal />
-      <GoalName name="Goal Name" />
-      <View style={styles.progressContainer}>
-        <Text style={styles.progressText}>Progress Bar</Text>
-        <ProgressBar percentage="0" justify="flex-end" color="white" />
+    <ScrollView>
+      <View style={styles.container}>
+        <GoalName name={selectedGoal.title} />
+        <View style={styles.progressContainer}>
+          <Text style={styles.progressText}>Progress Bar</Text>
+          <ProgressBar
+            percentage={selectedGoal.progress}
+            justify="flex-end"
+            color="white"
+          />
+        </View>
+        <Deadline date={selectedGoal.deadline} />
+        <GoalContainer
+          header="Today's Target"
+          color="#48CAE4"
+          selected={selectedGoal.todaysTarget}
+        />
+        <GoalContainer
+          header="Goal Steps"
+          color="#0077B6"
+          selected={selectedGoal.goalSteps}
+        />
       </View>
-      <Deadline />
-      <GoalContainer />
-    </View>
+    </ScrollView>
   );
 }
 

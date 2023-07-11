@@ -156,7 +156,8 @@ function AuthenticatedStack() {
           headerShown: true,
           headerStyle: { backgroundColor: "transparent" },
           headerShadowVisible: false,
-          headerTitleStyle: { fontSize: 1 },
+          headerTitleStyle: { fontSize: 1, color: '#03045E'},
+          headerTintColor: 'white',
         }}
       />
     </Stack.Navigator>

@@ -2,14 +2,14 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import { Ionicons } from "@expo/vector-icons";
 
-const Deadline = () => {
+const Deadline = ({ date }) => {
   function settingDeadline() {}
 
   return (
     <View style={styles.container}>
       <Text style={styles.textDescription}>Deadline</Text>
       <View style={styles.containerDate}>
-        <Text style={styles.textDate}>12 Agustus 2023</Text>
+        <Text style={styles.textDate}>{date}</Text>
         <TouchableOpacity style={styles.icon} onPress={settingDeadline}>
           <Ionicons name="calendar-outline" color={"black"} size={25} />
         </TouchableOpacity>

@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     fontFamily: "montserrat-bold",
     color: "black",
     fontSize: 25,
+    textAlign: 'center',
   },
 });
 

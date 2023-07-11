@@ -11,7 +11,7 @@ function HomeScreen() {
   useLayoutEffect(() => {
     navigation.setOptions({
       tabBarVisible: false,
-      headerBackVisible: false, // ini dia
+      headerBackVisible: false, 
     });
   }, [navigation]);
 
