@@ -4,7 +4,7 @@ import React from "react";
 import SearchFilter from "../components/sections/comPage/SearchFilter";
 import TweetCard from "../components/sections/comPage/TweetCard";
 
-const CommunityPageScreen = () => {
+function CommunityPageScreen (){
   return (
     <LinearGradient style={styles.background} colors={["#03045E", "#023E8A"]}>
       <Text style = {styles.headerText}>Community Page</Text>

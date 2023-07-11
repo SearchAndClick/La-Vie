@@ -18,6 +18,7 @@ import GoalPlannerScreen from "./screens/GoalPlannerScreen";
 import SmartQuestionsScreen from "./screens/SmartQuestionsScreen";
 import UserProfileScreen from "./screens/UserProfileScreen";
 import GoalOverviewScreen from "./screens/GoalOverviewScreen";
+import Favorite from "./screens/Favorite";
 
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -155,6 +156,19 @@ function AuthenticatedStack() {
         options={{
           headerShown: true,
           headerStyle: { backgroundColor: "transparent" },
+          headerShadowVisible: false,
+        }}
+      />
+      <Stack.Screen
+        name="Favorite"
+        component={Favorite}
+        options={{
+          headerShown: true,
+          headerTitleAlign: "center",
+          headerTitle: "Favorite",
+          headerStyle: { backgroundColor: "transparent" },
+          headerTintColor: "white",
+          headerTitleStyle: { fontFamily: "montserrat-bold", fontSize: 25 }, 
           headerShadowVisible: false,
         }}
       />
