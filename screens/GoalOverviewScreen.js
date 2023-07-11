@@ -2,7 +2,6 @@ import { useLayoutEffect } from "react";
 import { View, Text, StyleSheet, ScrollView } from "react-native";
 import Deadline from "../components/sections/GoalOv/Deadline";
 import GoalName from "../components/sections/GoalOv/GoalName";
-import HeaderGoal from "../components/sections/GoalOv/HeaderGoal";
 import ProgressBar from "../components/sections/ProgressBar";
 import GoalContainer from "../components/sections/GoalOv/GoalContainer";
 import IconButton from "../components/IconButton";

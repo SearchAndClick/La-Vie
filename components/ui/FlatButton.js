@@ -1,6 +1,5 @@
-// FlatButton untuk ke laman sign in kalo blm regis sama ke laman log in kalo punya akun
+// FlatButton untuk ke laman sign in kalo belum regis dan ke laman log in kalau punya akun
 import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 function FlatButton({ children, text, onPress }) {
   return (
