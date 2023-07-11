@@ -10,7 +10,7 @@ export default function GoalContainer({ header, color, selected }) {
   const navigation = useNavigation();
 
   function addGoalHandler() {
-    navigation.navigate();
+    navigation.navigate("NewGoal");
   }
 
   return (
