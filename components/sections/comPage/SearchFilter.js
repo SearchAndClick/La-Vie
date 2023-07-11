@@ -1,17 +1,20 @@
 import { View, Text, TextInput, TouchableOpacity, StyleSheet } from "react-native";
-import React from "react";
+import React, {useState} from "react";
 import { Ionicons } from "@expo/vector-icons";
+import FilterBox from "./FilterBox";
 
 function SearchFilter() {
+  const [filterClicked, setFilterClicked] = useState(false);
   function silang(){
 
   }
   
   function filterButton(){
-
+    setFilterClicked((prevState) => !prevState)
   }
 
   return (
+    <View>
     <View style= {styles.container}>
       <View style= {styles.searchBar}>
         <Ionicons name="search-outline" size={24} color="black" />
@@ -27,10 +30,25 @@ function SearchFilter() {
         <Text style = {styles.filterText}>Filter</Text>
       </TouchableOpacity>
     </View>
+    {filterClicked && 
+      <FilterBox/>
+    }
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  mainContainer: {
+    width: "100%"
+  },
+  filterContainer: {
+    height: 153,
+    borderBottomRightRadius: 10,
+    borderBottomLeftRadius: 10, 
+    backgroundColor: 'white',
+    marginBottom: 20,
+    padding: 20,
+  },
   container: {
     width: '90%', 
     alignSelf: 'center',

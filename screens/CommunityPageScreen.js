@@ -9,7 +9,7 @@ const CommunityPageScreen = () => {
     <LinearGradient style={styles.background} colors={["#03045E", "#023E8A"]}>
       <Text style = {styles.headerText}>Community Page</Text>
       <SearchFilter/>
-      <ScrollView>
+      <ScrollView style ={styles.scrollStyle}>
         <TweetCard/>
         <TweetCard/>
         <TweetCard/>
@@ -35,5 +35,8 @@ const styles = StyleSheet.create({
     fontSize: 25,
     color: 'white', 
     marginVertical: 30,
+  }, 
+  scrollStyle: {
+    width: '100%'
   }
 });
