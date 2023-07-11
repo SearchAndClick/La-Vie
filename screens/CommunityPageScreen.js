@@ -1,6 +1,8 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
+import SearchFilter from "../components/sections/comPage/searchFilter";
+import 
 
 const CommunityPageScreen = () => {
   return (
@@ -8,6 +10,9 @@ const CommunityPageScreen = () => {
       <View>
         <Text>CommunityPageScreen</Text>
       </View>
+      <ScrollView>
+
+      </ScrollView>
     </LinearGradient>
   );
 };
