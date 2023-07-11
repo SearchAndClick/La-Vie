@@ -13,7 +13,9 @@ class Goal {
     isPublic,
     isFavorite
   ) {
+    this.id = id;
     this.title = title;
+    this.description = description;
     this.progress = progress;
     this.deadline = deadline;
     this.category = category;
