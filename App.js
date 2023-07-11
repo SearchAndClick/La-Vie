@@ -115,6 +115,11 @@ function AuthenticatedStack() {
       <Stack.Screen
         name="CommunityPage"
         component={() => TabNavigator("CommunityPage")}
+        options={{
+          headerShown: false,
+          headerStyle: { backgroundColor: "transparent" },
+          headerShadowVisible: false,
+        }}
       />
       <Stack.Screen
         name="Settings"
