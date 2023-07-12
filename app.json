@@ -22,7 +22,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon1.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.computergeeks.lavie"
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
