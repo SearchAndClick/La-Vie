@@ -15,8 +15,11 @@ function AuthContent({ isLogin, onAuthenticate }) {
     confirmPassword: false,
   });
 
+  const [Login, setLogin] = useState(isLogin? false: true)
+
   function switchAuthModeHandler() {
     // Todo
+    setLogin((prevState) => !prevState)
   }
 
   function submitHandler(credentials) {
@@ -49,20 +52,22 @@ function AuthContent({ isLogin, onAuthenticate }) {
   }
 
   return (
-    <LinearGradient style = {isLogin? styles.authContentLogin: styles.authContentSignin} start= {[0,0]} end= {[1,1]} colors={['#ADE8F4', '#4B87B7', '#155196','#023E8A']}>
+    <View style = {{flex:1, alignItems: 'center', justifyContent: 'center'}}>
+    <LinearGradient style = {Login? styles.authContentLogin: styles.authContentSignin} start= {[0,0]} end= {[1,1]} colors={['#ADE8F4', '#4B87B7', '#155196','#023E8A']}>
       <View style = {styles.container}>
         <AuthForm
-          isLogin={isLogin}
+          isLogin={Login}
           onSubmit={submitHandler}
           credentialsInvalid={credentialsInvalid}
         />
         <View style={styles.buttons}>
-          <FlatButton onPress={switchAuthModeHandler} text = {isLogin ? 'Belum punya akun?' : 'Sudah punya akun?'}>
-              {isLogin ? 'Daftar' : 'Masuk kembali'}
+          <FlatButton onPress={switchAuthModeHandler} text = {Login ? 'Belum punya akun?' : 'Sudah punya akun?'}>
+              {Login ? 'Daftar' : 'Masuk kembali'}
           </FlatButton>
         </View>
       </View>
     </LinearGradient>
+    </View>
   );
 }
 
@@ -101,6 +106,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignSelf: 'center',
     alignItems: 'center',
+    justifyContent: 'center'
   },
   buttons: {
     marginTop: 8,

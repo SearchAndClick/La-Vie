@@ -1,24 +1,17 @@
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
 import SearchFilter from "../components/sections/comPage/SearchFilter";
-import TweetCard from "../components/sections/comPage/TweetCard";
+import TweetList from "../components/sections/comPage/TweetList";
 
 function CommunityPageScreen (){
   return (
     <LinearGradient style={styles.background} colors={["#03045E", "#023E8A"]}>
       <Text style = {styles.headerText}>Community Page</Text>
       <SearchFilter/>
-      <ScrollView style ={styles.scrollStyle}>
-        <TweetCard/>
-        <TweetCard/>
-        <TweetCard/>
-        <TweetCard/>
-        <TweetCard/>
-        <TweetCard/>
-        <TweetCard/>
-        <TweetCard/>
-      </ScrollView>
+      <View style= {{width: '100%'}}>
+      <TweetList/>
+      </View>
     </LinearGradient>
   );
 };

@@ -1,14 +1,14 @@
 import { View, StyleSheet } from 'react-native'
 import React from 'react'
 import { LinearGradient } from 'expo-linear-gradient'
-// Sementara pakai goalList dulu
-import GoalsList from '../components/sections/GoalsList'
+// Sementara pakai TweetList hardcode dulu
+import TweetList from '../components/sections/comPage/TweetList'
 
 function Favorite(){
   return (
     <View style= {styles.container}>
       <LinearGradient colors={['#CAF0F8', '#ffffff']} style= {{borderRadius: 20}}>
-        <GoalsList/>
+        <TweetList/>
       </LinearGradient>
     </View>
   )
