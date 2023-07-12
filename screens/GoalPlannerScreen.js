@@ -32,7 +32,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 40,
     height: "100%",
     width: "100%",
-    borderRadius: 20,
+    borderTopRightRadius: 20,
+    borderTopLeftRadius: 20,
   },
   header: {
     alignSelf: "center",
